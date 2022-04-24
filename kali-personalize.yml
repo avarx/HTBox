@@ -35,7 +35,7 @@
     # Firefox personalization
     - name: Set firefox_default_profile_dir fact
       ansible.builtin.set_fact:
-        firefox_default_profile_dir: "{{ kali_user_details.home }}/.mozilla/firefox/hacker.default-esr"
+        firefox_default_profile_dir: "{{ kali_user_details.home }}/.mozilla/firefox/avarx.default-esr"
 
     - name: Check if Firefox profile exists
       ansible.builtin.stat:
@@ -43,7 +43,7 @@
       register: firefox_profile
 
     - name: Create FireFox default profile
-      ansible.builtin.command: "firefox-esr -CreateProfile \"hacker {{ firefox_default_profile_dir }}\""
+      ansible.builtin.command: "firefox-esr -CreateProfile \"avarx {{ firefox_default_profile_dir }}\""
       when: not firefox_profile.stat.exists
 
     - name: Copy Firefox ini files
