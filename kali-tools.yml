@@ -51,3 +51,26 @@
         group: root
         mode: "{{ item.mode | default('0644') }}"
       loop: "{{ misc_downloads }}"
+    
+    ### CyberChef ###
+    - name: Creates cyberchef directory
+      file:
+        dest: /var/www/html/cyberchef/
+        state: directory
+        owner: root
+        group: root
+        mode: 655
+
+    - name: Download and unarchive CyberChef
+      unarchive:
+        src: https://github.com/gchq/CyberChef/releases/download/v9.37.3/CyberChef_v9.37.3.zip
+        dest: /var/www/html/cyberchef/
+        remote_src: yes
+
+    - name: Create a symbolic link - CyberChef
+      file:
+        src: /var/www/html/cyberchef/CyberChef_v9.37.3.html
+        dest: /var/www/html/cyberchef.htm
+        owner: root
+        group: root
+        state: link
