@@ -1,25 +1,23 @@
-# Ansible 4 Kali
->  Manually configuring Kali? Ain't nobody got time for that.
-
-These playbooks install most of the tools that I require with some tweaks for hardening, personalization, and making Kali quieter.
+# HTBox
+[ansible-playbook-kali](https://github.com/iesplin/ansible-playbook-kali) customized for my needs.
 
 How to use
 ------
 
-- Install Kali using the default install. See https://github.com/iesplin/kali-preseed for an example
+- Install Kali
 - Clone this repo 
     ```bash
-    git clone https://github.com/iesplin/ansible-playbook-kali
+    git clone https://github.com/avarx/HTBox
     ```
 - Run the deploy script
     ```bash
-    cd ansible-playbook-kali
+    cd HTBox
     ./deploy.sh
     ```
 
 Author
 -------
-iesplin
+iesplin & avarx
 
 License
 -------
